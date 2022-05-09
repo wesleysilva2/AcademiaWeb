@@ -1,0 +1,162 @@
+/*
+
+--- 01 Sistema de Tipografia 
+
+-Font Size 
+
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font Weights
+Default:400 
+
+- Line Heights 
+Default: 1 
+
+--- 02 COLORS
+
+ - Primary: rgb(218, 42, 218);
+ - Tints: #e9e7f3
+ - Shades: #1f0f7a
+ - Accents: 
+ - Greys 
+  #555
+
+ --- 03 Shadows 
+
+ --- 04 BORDER-RADIUS 
+
+ --- 05 WHITE SPACE 
+
+ --- SPACING SYSTEB(px)
+
+ 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+html {
+  /*font-size: 10px; Esse valor é multiplicado por cada rem para calcular a quantidade de px, 16 px é o valor basico*/
+  /*10px / 16 = 0.625 = 62.5%*/
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.section-hero {
+  background-color: #e9e7f3;
+  padding: 9.6rem 0; /*96 px*/
+}
+
+.hero {
+  max-width: 130rem; /* Multiplicando 130 rem por 10 temos 1300 px max-width ja responsivo*/
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Colocar dois itens um de cada lado no grid*/
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 5.2rem; /*52px*/
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.hero-text-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  /*Colocando uma transição entre as cores de background nos butões*/
+  transition: background-color 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: rgb(218, 42, 218);
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #1f0f7a;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #e9e7f3;
+  color: #555;
+
+  /*Truque para ter a borda dentro do botão*/
+
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.hero-img {
+  width: 100%; /*Colocando a imagem pra pegar 100% do grid ja é responsivo*/
+}
+
+.margin-right-sm {
+  /*criando essa classe podemos usar sempre que quisermos espaço a direita*/
+  margin-right: 1.6rem !important;
+}
+
+.grade-cursos {
+  display: flex;
+  margin-top: 8rem;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.imags-cursos {
+  display: flex;
+}
+
+.imags-cursos img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #e9e7f3;
+}
+
+.imags-cursos img:last-child {
+  margin: 0;
+}
+
+.texto-cursos {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.texto-cursos span {
+  color: rgb(218, 42, 218);
+  font-weight: 700;
+}
