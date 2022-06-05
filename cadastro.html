@@ -6,6 +6,8 @@
 
 
   <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/general.css" />
 
 </head>
 <body>
@@ -16,25 +18,20 @@
     <div class="content">      
       <!--FORMULÁRIO DE LOGIN-->
       <div id="login">
-        <form method="post" action=""> 
+        <form method="post" action="login.php"> 
           <h1>Login</h1> 
           <p> 
-            <label for="nome_login">Seu nome</label>
-            <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. contato@htmlecsspro.com"/>
-          </p>
-           
-          <p> 
             <label for="email_login">Seu e-mail</label>
-            <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. senha" /> 
+            <input id="email_login" name="email_login" required="required" type="text" placeholder="ex. contato@email.com"/>
           </p>
            
           <p> 
-            <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-            <label for="manterlogado">Manter-me logado</label>
+            <label for="senha_login">Sua Senha</label>
+            <input id="senha_login" name="senha_login" required="required" type="password" placeholder="********" /> 
           </p>
            
           <p> 
-            <input type="submit" value="Logar" /> 
+            <input type="submit" id="logar" value="logar" name="logar"/> 
           </p>
            
           <p class="link">
@@ -43,10 +40,10 @@
           </p>
         </form>
       </div>
- 
+
       <!--FORMULÁRIO DE CADASTRO-->
       <div id="cadastro">
-        <form method="post" action=""> 
+        <form method="post" action="processa.php"> 
           <h1>Cadastro</h1> 
            
           <p> 
@@ -56,12 +53,12 @@
            
           <p> 
             <label for="email_cad">Seu e-mail</label>
-            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com"/> 
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@email.com"/> 
           </p>
            
           <p> 
             <label for="senha_cad">Sua senha</label>
-            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="********"/>
           </p>
            
           <p> 
@@ -76,5 +73,64 @@
       </div>
     </div>
   </div>  
+  <footer class="footer">
+    <div class="container grid grid--footer">
+      <div class="logo-col">
+        <a href="#" class="footer-logo">
+          <img
+            class="logo"
+            src="img/Movimento Fit Logo.png"
+            alt="MovimentoFit Logo"
+          />
+        </a>
+
+        <ul class="social-links">
+          <li>
+            <a class="footer-link" href=""><ion-icon class="social-icon" name="logo-instagram"></ion-icon></a>
+          </li>
+          <li>
+            <a class="footer-link" href=""><ion-icon class="social-icon" name="logo-facebook"></ion-icon></ion-icon></a>
+          </li>
+          <li>
+            <a class="footer-link" href=""><ion-icon class="social-icon" name="logo-twitter"></ion-icon></ion-icon></a>
+          </li>
+        </ul>
+
+        <p class="copyrigth">Copyrigith &copy; 2028 by MovimentoFit, Inc, All rights reserved</p>
+      </div>
+      <div class="Address-col">
+        <p class="footer-heading">Entre em contato com a gente</p>
+        <address class="contacts">
+          <p>
+            <a class="footer-link" href="tel:Phone: 0800-86703 ">0800-86703</a><br />
+            <a class="footer-link" href=" Email:MovimentoFit@gmail.com">MovimentoFit@gmail.com</a>
+          </p>
+        </address>
+      </div>
+      <nav class="nav-col">
+        <p class="footer-heading">Account</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">Cria Sua conta</a></li>
+          <li><a class="footer-link" href="#">Sign in</a></li>
+        </ul>
+      </nav>
+      <nav class="nav-col">
+        <p class="footer-heading">Compania</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">Sobre o movimento FIT</a></li>
+          <li><a class="footer-link" href="#">Para negocios</a></li>
+          <li><a class="footer-link" href="#">Nossos Parceiros</a></li>
+        </ul>
+      </nav>
+      <nav class="nav-col">
+        <p class="footer-heading">Recursos</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">Geração dos equipamentos</a></li>
+          <li><a class="footer-link" href="#">Nutricionistas Parceiros</a></li>
+          <li><a class="footer-link" href="#">Termos de privacidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
