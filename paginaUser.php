@@ -1,30 +1,35 @@
 <?php 
   session_start(); 
 
-  if (!isset($_SESSION['name'])) {
+  if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: login.php');
   }
   if (isset($_GET['logout'])) {
   	session_destroy();
-  	unset($_SESSION['name']);
+  	unset($_SESSION['username']);
   	header("location: login.php");
   }
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pagina de usuario</title>
-  </head>
-  <body>
-  <div class="header">
-	<h2>Home Page</h2>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/styleLogin.css">
+</head>
+<body>
+
+<div class="header">
+	  <a href="index.html">	
+        <img
+          class="logo"
+          src="img/Movimento Fit Logo.png"
+          alt="MovimentoFit Logo"
+        />
+      </a>
+	<h2>Pagina de Usuario</h2>
 </div>
-	Welcome to my project page	
+	Bem vindo a pagina de usuario
 <div class="content">
   	<!-- notification message -->
   	<?php if (isset($_SESSION['success'])) : ?>
@@ -39,10 +44,11 @@
   	<?php endif ?>
 
     <!-- logged in user information -->
-    <?php  if (isset($_SESSION['name'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['name']; ?></strong></p>
-    	<p> <a href="index.html?logout='1'" style="color: red;">logout</a> </p>
+    <?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Bem vindo <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p> <a href="paginaUser.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>
 </div>
-  </body>
+
+</body>
 </html>

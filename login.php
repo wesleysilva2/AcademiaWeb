@@ -1,35 +1,40 @@
-<?php
-
-session_start();
-$email_login = "";
-$senha_login = "";
-$errors = array(); 
-
-include_once("conexao.php");
-
-if (isset($_POST['logar'])) {
-    $email_login = mysqli_real_escape_string($conexao, $_POST['email_login']);
-    $senha_login = mysqli_real_escape_string($conexao, $_POST['senha_login']);
-
-    if (empty($email_login)) {
-        array_push($errors, "Email é requerido");
-    }
-    if (empty($senha_login)) {
-        array_push($errors, "Senha é necessaria");
-    }
-
-    if (count($errors) == 0) {
-        $senha_login = md5($senha_login);
-        $query = "SELECT * FROM usuarios WHERE email='$email_login' AND senha='$senha_login'";
-        $results = mysqli_query($conexao, $query);
-        if (mysqli_num_rows($results) == 1) {
-          $_SESSION['email'] = $email_login;
-          $_SESSION['success'] = "Você conseguiu logar";
-          header('location: paginaUser.php');
-        }else {
-            array_push($errors, "Wrong username/password combination");
-        }
-    }
-
-}
-?>
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Movimento FIT</title>
+  <link rel="stylesheet" type="text/css" href="css/styleLogin.css">
+  <link rel="stylesheet" href="css/general.css" />
+</head>
+<body>
+	<main>
+		<div class="header">
+		<a href="index.html">
+        <img
+          class="logo"
+          src="img/Movimento Fit Logo.png"
+          alt="MovimentoFit Logo"
+        />
+      </a>
+		<h2>Login</h2>
+		</div>
+	<form method="post" action="login.php">
+		<?php include('errors.php'); ?>
+		<div class="input-group">
+			<label>Nome de Usuario</label>
+			<input type="text" name="username" >
+		</div>
+		<div class="input-group">
+			<label>Senha</label>
+			<input type="password" name="password">
+		</div>
+		<div class="input-group">
+			<button type="submit" class="btn" name="login_user">Login</button>
+		</div>
+		<p>
+			Ainda não é membro? <a href="register.php">Cadastre-se</a>
+		</p>
+	</form>
+	</main>
+</body>
+</html>

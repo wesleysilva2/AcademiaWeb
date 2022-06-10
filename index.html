@@ -28,7 +28,7 @@
   </head>
   <body>
     <header class="header">
-      <a href="#">
+      <a href="index.html">
         <img
           class="logo"
           src="img/Movimento Fit Logo.png"
@@ -37,10 +37,10 @@
       </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#">Cursos</a></li>
-          <li><a class="main-nav-link" href="#">Planos</a></li>
-          <li><a class="main-nav-link" href="#">Academias</a></li>
-          <li><a class="main-nav-link nav-cta" href="cadastro.html">Cadastre-se</a></li>
+          <li><a class="main-nav-link" href="#cursos">Cursos</a></li>
+          <li><a class="main-nav-link" href="#planos">Planos</a></li>
+          <li><a class="main-nav-link" href="listaAcademias.html">Academias</a></li>
+          <li><a class="main-nav-link nav-cta" href="register.php">Cadastre-se</a></li>
         </ul>
       </nav>
     </header>
@@ -58,7 +58,7 @@
               instalações e cursos nas nossas academias. Se Inscreva ja e
               conquiste o seu Fit dos sonhos!
             </p>
-            <a href="cadastro.html" class="btn btn--full margin-right-sm"
+            <a href="register.php" class="btn btn--full margin-right-sm"
               >Conquiste Seu Fit</a
             >
             <a href="#" class="btn btn--outline">Veja Mais &darr;</a>
@@ -91,7 +91,7 @@
           <span class="subheading">Variedade de Atividades</span>
           <h2 class="heading-secondary">Veja Nossos Cursos Mais Populares</h2>
         </div>
-        <div class="container grid grid--2-cols .grid--center-v">
+        <div class="container grid grid--2-cols .grid--center-v" id="cursos">
           <!--Gride 1 De Cursos-->
           <div class="course-img-box">
             <a href="descricao1.html"
@@ -196,7 +196,7 @@
               </ul>
             </div>
           </div>
-          <div class="planos">
+          <div class="planos" id="planos">
             <img src="img/academia chique.jpg" class="plano-img" />
             <div class="planos-content">
               <div class="plano-tags">

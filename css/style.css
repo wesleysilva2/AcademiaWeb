@@ -292,3 +292,13 @@
   gap: 9.6rem;
   align-items: center;
 }
+
+/************************/
+/* ACADEMIAS SECTION */
+/************************/
+
+.academias-text-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
