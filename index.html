@@ -28,18 +28,19 @@
   </head>
   <body>
     <header class="header">
-      <img
-        class="logo"
-        src="img/Movimento Fit Logo.png"
-        alt="MovimentoFit Logo"
-      />
+      <a href="index.html">
+        <img
+          class="logo"
+          src="img/Movimento Fit Logo.png"
+          alt="MovimentoFit Logo"
+        />
+      </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#">Section 1</a></li>
-          <li><a class="main-nav-link" href="#">Section 2</a></li>
-          <li><a class="main-nav-link" href="#">Section 3</a></li>
-          <li><a class="main-nav-link" href="#">Section 4</a></li>
-          <li><a class="main-nav-link nav-cta" href="#">Cadastre-se</a></li>
+          <li><a class="main-nav-link" href="#cursos">Cursos</a></li>
+          <li><a class="main-nav-link" href="#planos">Planos</a></li>
+          <li><a class="main-nav-link" href="listaAcademias.html">Academias</a></li>
+          <li><a class="main-nav-link nav-cta" href="register.php">Cadastre-se</a></li>
         </ul>
       </nav>
     </header>
@@ -57,7 +58,7 @@
               instalações e cursos nas nossas academias. Se Inscreva ja e
               conquiste o seu Fit dos sonhos!
             </p>
-            <a href="#" class="btn btn--full margin-right-sm"
+            <a href="register.php" class="btn btn--full margin-right-sm"
               >Conquiste Seu Fit</a
             >
             <a href="#" class="btn btn--outline">Veja Mais &darr;</a>
@@ -90,10 +91,10 @@
           <span class="subheading">Variedade de Atividades</span>
           <h2 class="heading-secondary">Veja Nossos Cursos Mais Populares</h2>
         </div>
-        <div class="container grid grid--2-cols .grid--center-v">
+        <div class="container grid grid--2-cols .grid--center-v" id="cursos">
           <!--Gride 1 De Cursos-->
           <div class="course-img-box">
-            <a href="#"
+            <a href="descricao1.html"
               ><img
                 src="img/Curso Yoga.jpg"
                 class="course-img"
@@ -101,7 +102,7 @@
             /></a>
           </div>
           <div class="course-img-box">
-            <a href="#"
+            <a href="descrocap2.html"
               ><img
                 src="img/Curso Boxe.jpg"
                 class="course-img"
@@ -109,7 +110,7 @@
             /></a>
           </div>
           <div class="course-img-box">
-            <a href="#"
+            <a href="descricao3.html"
               ><img
                 src="img/ginastica e fitdance.jpg"
                 class="course-img"
@@ -118,7 +119,7 @@
           </div>
           <!--Gride 2 De Cursos-->
           <div class="course-img-box">
-            <a href="#"
+            <a href="descricao4.html"
               ><img
                 src="img/Funcional.jpg"
                 class="course-img"
@@ -126,7 +127,7 @@
             /></a>
           </div>
           <div class="course-img-box">
-            <a href="#"
+            <a href="descricao5.html"
               ><img
                 src="img/Musculação.jpg"
                 class="course-img"
@@ -134,7 +135,7 @@
             /></a>
           </div>
           <div class="course-img-box">
-            <a href="#"
+            <a href="descricao6.html"
               ><img
                 src="img/Curso jiu jitsu.jpg"
                 class="course-img"
@@ -195,13 +196,13 @@
               </ul>
             </div>
           </div>
-          <div class="planos">
+          <div class="planos" id="planos">
             <img src="img/academia chique.jpg" class="plano-img" />
             <div class="planos-content">
               <div class="plano-tags">
                 <span class="tag">O mais vantajoso !!</span>
               </div>
-              <p class="plano-title">Plano Premium Fit, por até R$ 109.99</p>
+              <p class="plano-title">Plano Premium Fit, por até R$ 119.99</p>
               <ul class="planos-atributos">
                 <li class="plano-atributo">
                   <ion-icon
@@ -263,5 +264,64 @@
         </div>
       </section>
     </main>
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <img
+              class="logo"
+              src="img/Movimento Fit Logo.png"
+              alt="MovimentoFit Logo"
+            />
+          </a>
+
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href=""><ion-icon class="social-icon" name="logo-instagram"></ion-icon></a>
+            </li>
+            <li>
+              <a class="footer-link" href=""><ion-icon class="social-icon" name="logo-facebook"></ion-icon></ion-icon></a>
+            </li>
+            <li>
+              <a class="footer-link" href=""><ion-icon class="social-icon" name="logo-twitter"></ion-icon></ion-icon></a>
+            </li>
+          </ul>
+
+          <p class="copyrigth">Copyrigith &copy; 2028 by MovimentoFit, Inc, All rights reserved</p>
+        </div>
+        <div class="Address-col">
+          <p class="footer-heading">Entre em contato com a gente</p>
+          <address class="contacts">
+            <p>
+              <a class="footer-link" href="tel:Phone: 0800-86703 ">0800-86703</a><br />
+              <a class="footer-link" href=" Email:MovimentoFit@gmail.com">MovimentoFit@gmail.com</a>
+            </p>
+          </address>
+        </div>
+        <nav class="nav-col">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Cria Sua conta</a></li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Compania</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Sobre o movimento FIT</a></li>
+            <li><a class="footer-link" href="#">Para negocios</a></li>
+            <li><a class="footer-link" href="#">Nossos Parceiros</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Recursos</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Geração dos equipamentos</a></li>
+            <li><a class="footer-link" href="#">Nutricionistas Parceiros</a></li>
+            <li><a class="footer-link" href="#">Termos de privacidade</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

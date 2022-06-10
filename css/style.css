@@ -77,6 +77,7 @@
 
 .hero-img {
   width: 100%; /*Colocando a imagem pra pegar 100% do grid ja é responsivo*/
+  border-radius: 10px 20px;
 }
 
 .grade-cursos {
@@ -194,4 +195,110 @@
   height: 2.4rem;
   width: 2.4rem;
   color: rgb(218, 42, 218);
+}
+
+/************************/
+/* FOOTER SECTION */
+/************************/
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyrigth {
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #767676;
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}
+
+/************************/
+/* DESCRIPTION SECTION */
+/************************/
+
+.section-descriptions {
+  background-color: #e9e7f3;
+  padding: 4.8rem 0 9.6rem 0; /*96 px*/
+}
+
+.desc-img {
+  width: 100%; /*Colocando a imagem pra pegar 100% do grid ja é responsivo*/
+  border-radius: 10px 20px;
+}
+
+.hero-description {
+  max-width: 130rem; /* Multiplicando 130 rem por 10 temos 1300 px max-width ja responsivo*/
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Colocar dois itens um de cada lado no grid*/
+  gap: 9.6rem;
+  align-items: center;
+}
+
+/************************/
+/* ACADEMIAS SECTION */
+/************************/
+
+.academias-text-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
 }
