@@ -129,6 +129,7 @@
 .course-img {
   width: 40rem !important;
   height: 40rem !important;
+  border-radius: 10px 20px;
 }
 
 /************************/

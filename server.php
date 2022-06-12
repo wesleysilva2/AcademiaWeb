@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-// initializing variables
+// Inicializando variaveis 
 $username = "";
 $email    = "";
 $errors = array(); 
 
-// connect to the database
+// Conectando com banco de dados
 $db = mysqli_connect('localhost', 'root', '', 'movimentofit');
 
 // REGISTER USER
@@ -32,7 +32,7 @@ if (isset($_POST['reg_user'])) {
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
-  if ($user) { // if user exists
+  if ($user) { // Se usuario existe
     if ($user['username'] === $username) {
       array_push($errors, "Nome de Usuario ja Cadastrado");
     }
@@ -42,9 +42,9 @@ if (isset($_POST['reg_user'])) {
     }
   }
 
-  // Finally, register user if there are no errors in the form
+  // Registra o usuario se não tiver nenhum erro no cadastro
   if (count($errors) == 0) {
-  	$password = md5($password_1);//encrypt the password before saving in the database
+  	$password = md5($password_1);//encripitando a senha antes de salvar no banco de dados 
 
   	$query = "INSERT INTO usuarios (username, email, password) 
   			  VALUES('$username', '$email', '$password')";

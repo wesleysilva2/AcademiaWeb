@@ -5,12 +5,12 @@
 <?php
 session_start();
 
-// initializing variables
+// Inicializar Variaveis
 $username = "";
 $email    = "";
 $errors = array(); 
 
-// connect to the database
+// Concectar com o banco de dados
 $db = mysqli_connect('localhost', 'root', '', 'movimentofit');
 
 if ($db->connect_error) {
@@ -24,7 +24,7 @@ $result = $db->query($sql);
 
 
 if ($result->num_rows > 0) {
-    // output data of each row
+    // dados de saída de cada linha
     while($row = $result->fetch_assoc()) {
         print "<br> id: ". $row["id"]. "<br> - Name: ". $row["username"]. "<br> - Email: " . $row["email"] . "<br>";
       print "<img src=\"".$row["img"]."\">";
