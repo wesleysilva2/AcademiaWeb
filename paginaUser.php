@@ -29,7 +29,6 @@
       </a>
 	<h2>Pagina de Usuario</h2>
 </div>
-	Bem vindo a pagina de usuario
 <div class="content">
   	<!-- notification message -->
   	<?php if (isset($_SESSION['success'])) : ?>
