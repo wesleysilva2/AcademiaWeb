@@ -46,7 +46,10 @@
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Bem vindo <strong><?php echo $_SESSION['username']; ?></strong></p>
     	<p> <a href="paginaUser.php?logout='1'" style="color: red;">logout</a> </p>
+      <p> <a href="CadastraAcademia.php" style="color: blue;">Cadastrar Academias</a> </p>
     <?php endif ?>
+
+   
 </div>
 
 </body>

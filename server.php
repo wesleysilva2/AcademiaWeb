@@ -81,4 +81,23 @@ if (isset($_POST['login_user'])) {
   }
 }
 
+// REGISTRAR ACADEMIA
+if (isset($_POST['reg_acad'])) {
+  $nomeAcademia = mysqli_real_escape_string($db, $_POST['nomeAcademia']);
+  if (empty($nomeAcademia)) { array_push($errors, "É requerido escolher uma academia"); }
+
+  if (count($errors) == 0) {
+
+
+    $query = "UPDATE usuarios SET (academiaCadastrada) = ('$nomeAcademia') WHERE id = 1";
+    /*
+    $query = "INSERT INTO usuarios (academiaCadastrada) 
+  			  VALUES('$nomeAcademia')";
+    */
+  	mysqli_query($db, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "Academia cadastrada com sucesso";
+  	header('location: paginaUser.php');
+  }
+}
 ?>
