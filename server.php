@@ -83,21 +83,42 @@ if (isset($_POST['login_user'])) {
 
 // REGISTRAR ACADEMIA
 if (isset($_POST['reg_acad'])) {
+  $username = mysqli_real_escape_string($db, $_POST['username']);
   $nomeAcademia = mysqli_real_escape_string($db, $_POST['nomeAcademia']);
+  
+
   if (empty($nomeAcademia)) { array_push($errors, "É requerido escolher uma academia"); }
 
   if (count($errors) == 0) {
 
+    $query = "UPDATE usuarios SET academiaCadastrada='$nomeAcademia' WHERE username = '$username'";
 
-    $query = "UPDATE usuarios SET (academiaCadastrada) = ('$nomeAcademia') WHERE id = 1";
-    /*
-    $query = "INSERT INTO usuarios (academiaCadastrada) 
-  			  VALUES('$nomeAcademia')";
-    */
+    //$query = "UPDATE usuarios SET (academiaCadastrada) = ('$nomeAcademia') WHERE id = 1";
+  
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "Academia cadastrada com sucesso";
   	header('location: paginaUser.php');
   }
 }
+
+// REGISTRAR CURSOS
+
+if (isset($_POST['reg_curs'])) {
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $nomeCurso = mysqli_real_escape_string($db, $_POST['nomeCurso']);
+  
+  if (empty($nomeCurso)) { array_push($errors, "É requerido escolher um Curso"); }
+
+  if (count($errors) == 0) {
+    $queryCursoCad = "SELECT cursosCadastrados FROM usuarios;";
+    $query = "UPDATE usuarios SET cursosCadastrados=(SELECT cursosCadastrados FROM usuarios;), '$nomeCurso' WHERE username = '$username'";
+  
+  	mysqli_query($db, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "Curso cadastrado com sucesso";
+  	header('location: paginaUser.php');
+  }
+}
+
 ?>

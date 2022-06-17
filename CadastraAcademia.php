@@ -35,7 +35,17 @@
                 </div>
                 
                 <form method="post" action="CadastraAcademia.php">
+                    <?php include('errors.php'); ?>
+                    <div>
+                    <p> <a href="paginaUser.php" style="color: purple;">PAGINA DE USUARIO</a> </p>
+                    </div>
+                    <br><br>
                     <div class="input-group">
+                        <label>Nome de Usuario</label>
+                        <input type="text" name="username" value="<?php echo $_SESSION['username']; ?>">
+                    </div>
+                    <div class="input-group">
+                        <label>Lista de Academias</label>
                         <select type="nomeAcademia" name="nomeAcademia" value="<?php echo $nomeAcademia; ?>"> 
                             <option selected></option>
                             <?php 
@@ -46,9 +56,11 @@
                             ?>
                         </select>
                     </div>
+                    <br>
                     <div class="input-group">
-                        <button type="submit" class="btn" name="reg_acad">Cadastrar</button>
+                        <button type="submit" class="btn" name="reg_acad">Cadastrar Academia</button>
                     </div>
+                       
                 </form>
      
                 </div>
