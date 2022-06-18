@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" type="text/css" href="css/styleLogin.css">
-    <title>Cadastro de Academias</title>
+    <title>Cadastro de Planos</title>
 </head>
 <body>
     <main>
@@ -31,9 +31,9 @@
             <section class="section-courses">
                 <div class="container">
                   <span class="subheading">Listas de Academias</span>
-                  <h2 class="heading-secondary">Selecione Sua Academia</h2>
+                  <h2 class="heading-secondary">Selecione Seu Plano</h2>
                 </div> 
-                <form method="post" action="CadastraAcademia.php">
+                <form method="post" action="CadastraPlano.php">
                     <?php include('errors.php'); ?>
                     <div>
                     <p> <a href="paginaUser.php" style="color: purple;">PAGINA DE USUARIO</a> </p>
@@ -44,20 +44,27 @@
                         <input type="text" name="username" readonly="readonly" value="<?php echo $_SESSION['username']; ?>">
                     </div>
                     <div class="input-group">
-                        <label>Lista de Academias</label>
-                        <select type="nomeAcademia" name="nomeAcademia" value="<?php echo $nomeAcademia; ?>"> 
+                        <label>Lista de Planos Disponiveis</label>
+                        <select type="nomePlano" name="nomePlano" value="<?php echo $nomePlano; ?>"> 
                             <option selected></option>
                             <?php 
-                                $sql = mysqli_query($db,"select nomeAcademia from academias where id >= 1");
+                                $sql = mysqli_query($db,"select nomePlano from plano where id >= 1");
                                 while($row = mysqli_fetch_assoc($sql)){
-                                    echo "<option>".$row['nomeAcademia']."</option>";
+                                    echo "<option>".$row['nomePlano']."</option>";
+                                    /*
+                                    $name = $row['nomePlano'];
+                                    $sqlValor = mysqli_query($db,"select valor from plano where nomePlano = '$name'");
+                                    if ($row2 = $sqlValor->fetch_assoc()) {
+                                        echo "<br>".$row2['valor']."<br>";
+                                    }
+                                    */
                                 }
                             ?>
                         </select>
                     </div>
                     <br>
                     <div class="input-group">
-                        <button type="submit" class="btn" name="reg_acad">Cadastrar Academia</button>
+                        <button type="submit" class="btn" name="reg_plan">Comprar Plano</button>
                     </div>
                 </form>
                 </div>

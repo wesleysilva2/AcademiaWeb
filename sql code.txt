@@ -5,18 +5,25 @@ CREATE TABLE `usuarios` (
   `password` varchar(100) NOT NULL,
   `cursosCadastrados` varchar(100) NOT NULL,
   `academiaCadastrada` varchar(100) NOT NULL,
+  `planoCadastrado` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `plano` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nomePlano` varchar(100) NOT NULL,
+  `descricao` varchar(400) NOT NULL,
+  `valor` float
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cursos` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeCurso` varchar(100) NOT NULL,
-  `descricao` varchar(400) NOT NULL,
+  `descricao` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE `academias` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeAcademia` varchar(100) NOT NULL,
-  `endereco` varchar(400) NOT NULL,
+  `endereco` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

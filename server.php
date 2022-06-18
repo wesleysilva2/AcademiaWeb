@@ -81,7 +81,8 @@ if (isset($_POST['login_user'])) {
   }
 }
 
-// REGISTRAR ACADEMIA
+//REGISTRAR ACADEMIA
+
 if (isset($_POST['reg_acad'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $nomeAcademia = mysqli_real_escape_string($db, $_POST['nomeAcademia']);
@@ -102,7 +103,7 @@ if (isset($_POST['reg_acad'])) {
   }
 }
 
-// REGISTRAR CURSOS
+//REGISTRAR CURSOS
 
 if (isset($_POST['reg_curs'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
@@ -111,14 +112,35 @@ if (isset($_POST['reg_curs'])) {
   if (empty($nomeCurso)) { array_push($errors, "É requerido escolher um Curso"); }
 
   if (count($errors) == 0) {
-    $queryCursoCad = "SELECT cursosCadastrados FROM usuarios;";
-    $query = "UPDATE usuarios SET cursosCadastrados=(SELECT cursosCadastrados FROM usuarios;), '$nomeCurso' WHERE username = '$username'";
-  
+    
+    $query = "UPDATE usuarios SET cursosCadastrados = CONCAT(cursosCadastrados, ' $nomeCurso') WHERE username = '$username'";
+    
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "Curso cadastrado com sucesso";
   	header('location: paginaUser.php');
   }
 }
+
+//REGISTRAR PLANOS
+
+if (isset($_POST['reg_plan'])) {
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $nomePlano = mysqli_real_escape_string($db, $_POST['nomePlano']);
+  
+  if (empty($nomePlano)) { array_push($errors, "É requerido escolher um Plano"); }
+
+  if (count($errors) == 0) {
+    
+    $query = "UPDATE usuarios SET planoCadastrado='$nomePlano' WHERE username = '$username'";
+    
+  	mysqli_query($db, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "Plano comprado com sucesso";
+  	header('location: paginaUser.php');
+  }
+
+}
+
 
 ?>

@@ -42,7 +42,7 @@
                     <br><br>
                     <div class="input-group">
                         <label>Nome de Usuario</label>
-                        <input type="text" name="username" value="<?php echo $_SESSION['username']; ?>">
+                        <input type="text" name="username" readonly="readonly" value="<?php echo $_SESSION['username']; ?>">
                     </div>
                     <div class="input-group">
                         <select type="nomeCurso" name="nomeCurso" value="<?php echo $nomeCurso; ?>"> 
@@ -59,11 +59,9 @@
                         <button type="submit" class="btn" name="reg_curs">Cadastrar Curso</button>
                     </div>
                 </form>
-     
                 </div>
               </section>
         </section>
     </main>
-    <h1>Aqui né</h1>
 </body>
 </html>
