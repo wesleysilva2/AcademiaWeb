@@ -2,6 +2,7 @@
 session_start();
 
 // Inicializando variaveis 
+
 $username = "";
 $email    = "";
 $errors = array(); 
@@ -141,6 +142,32 @@ if (isset($_POST['reg_plan'])) {
   }
 
 }
+
+//REGISTRAR CARTÃO
+
+if (isset($_POST['reg_card'])) {
+  // receive all input values from the form
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $numCard = mysqli_real_escape_string($db, $_POST['numCard']);
+  $cardVal = mysqli_real_escape_string($db, $_POST['cardVal']);
+ 
+  
+  if (empty($numCard)) { array_push($errors, "Numero de Cartão Requerido"); }
+  if (empty($cardVal)) { array_push($errors, "Data de Validade Requerida"); }
+ 
+
+  // Registra o cartão se não tiver nenhum erro no cadastro
+  if (count($errors) == 0) {
+
+  	$query = "INSERT INTO cartao (cardName, numCard, cardVal) 
+  			  VALUES('$username', '$numCard', '$cardVal')";
+  	mysqli_query($db, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "Cartão Cadastrado com Sucesso Sucesso";
+  	header('location: paginaUser.php');
+  }
+}
+
 
 
 ?>

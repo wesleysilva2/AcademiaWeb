@@ -1,7 +1,6 @@
 <?php include('server.php') ?>
 <?php 
   //session_start(); 
-
   if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
   	header('location: login.php');
@@ -19,7 +18,6 @@
 	<link rel="stylesheet" type="text/css" href="css/styleLogin.css">
 </head>
 <body>
-
 <div class="header">
 	  <a href="index.html">	
         <img
@@ -50,6 +48,7 @@
       <p> <a href="CadastraAcademia.php" style="color: blue;">Cadastrar Academias</a></p>
       <p> <a href="CadastraCursos.php" style="color: purple;">Cadastrar Cursos</a></p>
       <p> <a href="CadastraPlano.php" style="color: green;">Cadastrar Plano</a></p>
+      <p> <a href="CadastraCartao.php" style="color: orangered;">Cadastrar Cartão</a></p>
     <?php endif ?>
       <br><br><br>
     <div>
@@ -62,6 +61,19 @@
         echo "<option>".$row['planoCadastrado']."</option>";
         }
       ?>
+      <?php 
+      $username = $_SESSION['username'];
+
+      $sqlAcad = mysqli_query($db,"select planoCadastrado from usuarios where username = '$username'");
+
+      while ($row = $sqlAcad->fetch_assoc()) {
+        $name = $row['planoCadastrado'];
+        $sqlEnder = mysqli_query($db,"select valor from plano where nomePlano = '$name'");
+        while ($row = $sqlEnder->fetch_assoc()) {
+          echo 'Valor R$: ', $row['valor']."<br>";
+        }
+      }
+    ?>
     </div>
     <br>
     <div>

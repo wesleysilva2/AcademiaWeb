@@ -27,3 +27,10 @@ CREATE TABLE `academias` (
   `nomeAcademia` varchar(100) NOT NULL,
   `endereco` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `cartao` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `cardName` varchar(100) NOT NULL,
+  `cardNumber` varchar(100) NOT NULL,
+  `cardValidade` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
